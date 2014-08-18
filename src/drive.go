@@ -21,6 +21,8 @@ var Usage = func() {
 
 func main() {
 
+  MIRROR_FOLDER := "/Users/ryanstout/Sites/infinitydrive/go/drive"
+
 	flag.Usage = Usage
 	flag.Parse()
 
@@ -38,7 +40,7 @@ func main() {
 	}
 	defer c.Close()
 
-	err = fs.Serve(c, FS{"/Users/ryanstout/Sites/infinitydrive/go/drive"})
+	err = fs.Serve(c, FS{MIRROR_FOLDER})
 	if err != nil {
 		log.Fatal(err)
 	}
